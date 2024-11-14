@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Info - Toasted Den</title>
+    <link rel="icon" type="image/svg" href="assets/logo.svg">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<script>
+    window.onload = function() {
+        // Fetch the visit count directly from the visits.json file in the public folder
+        fetch('/api/count-visit')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('visit-count').textContent = `This site has been visited ${data.visit_count} times.`;
+            })
+            .catch(error => {
+                console.error('Error fetching visit count:', error);
+                document.getElementById('visit-count').textContent = 'Unable to fetch visit count.';
+            });
+    };
+</script>
+<body>
+    <div class="container">
+        <h1> <a href="https://github.com/toastedden/toasted-den-website">View Source</a> </h1>
+        <!-- Add gap text div -->
+        <div id="gap-text"></div>  <!-- This creates the vertical gap -->
+        <p class="smaller-text" id="visit-count">Loading visit count...</p>
+        <!-- Add gap text div -->
+        <div id="gap-text"></div>  <!-- This creates the vertical gap -->
+        <p class="smaller-text">
+            This website was developed and is hosted by 
+            <a href="https://youtube.com/@ToastedDen">Toasted Den</a> on a Raspberry Pi Zero 2 W,<br>
+            and is protected by Cloudflare.
+        </p>
+        <!-- Add gap text div -->
+        <div id="gap-text"></div>  <!-- This creates the vertical gap -->
+        <p class="smaller-text">We do not serve ads or collect your personal information.</p>
+    </div>
+    <footer class="footer">
+        <a href="https://youtube.com/@ToastedDen" target="_blank">YouTube Channel</a>
+        <a href="https://discord.gg/vWE9vt5j7B" target="_blank">Discord Server</a>
+        <a href="https://youtube.com/@RoastedDen" target="_blank">Second Channel</a>
+        <a href="https://www.twitch.tv/toasted_den" target="_blank">Twitch</a>
+        <a href="https://github.com/toastedden" target="_blank">GitHub</a>
+        <a href="https://toastedden.com/info" target="_blank">ToastBot</a>
+    </footer>
+</body>
+</html>

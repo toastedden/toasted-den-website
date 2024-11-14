@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Toasted Den</title>
+    <link rel="icon" type="image/svg" href="assets/logo.svg">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script>
+        window.onload = function() {
+            fetch('http://localhost:3000/api/count-visit', { method: 'GET' })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Visit count:', data.visit_count);
+                })
+                .catch(error => {
+                    console.error('Error updating visit count:', error);
+                });
+        };
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <!-- Toasted's Den Discord server link -->
+                <a href="https://discord.gg/vWE9vt5j7B" target="_blank">
+                    <img class="logo" src="assets/logo.svg" alt="Toasted Den Logo">
+                </a>
+            </div>
+            <h1>Hello, friend.</h1>
+            <!-- "Hello friend."? That's lame... -->
+            <!-- Business contact -->
+            <p class="smaller-text">For business inquiries, please use:</p>
+            <p class="smaller-text"><a href="mailto:business@toastedden.com">business@toastedden.com</a></p>
+           
+            <!-- Non-business contact -->
+            <p class="smaller-text">For non-business purposes and direct contact with me:</p>
+            <p class="smaller-text"><a href="mailto:contact@toastedden.com">contact@toastedden.com</a></p>
+        </div>
+    </header>
+    <footer class="footer">
+        <a href="https://youtube.com/@ToastedDen" target="_blank" title="Toasted Den YouTube">YouTube Channel</a>
+        <a href="https://discord.gg/vWE9vt5j7B" target="_blank" title="Discord Server">Discord Server</a>
+        <a href="https://youtube.com/@RoastedDen" target="_blank" title="Roasted Den YouTube">Second Channel</a>
+        <a href="https://www.twitch.tv/toasted_den" target="_blank" title="Twitch Channel">Twitch</a>
+        <a href="https://github.com/toastedden" target="_blank" title="GitHub">GitHub</a>
+        <a href="https://toastedden.com/info" target="_blank" title="Site Info">Site Info</a>
+        <a href="https://github.com/toastedden/toastbot" target="_blank" title="ToastBot">ToastBot</a>
+    </footer>
+</body>
+</html>

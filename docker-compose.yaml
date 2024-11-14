@@ -1,0 +1,29 @@
+services:
+  # NGINX Web Service
+  web:
+    container_name: "toasted_den_website"
+    image: nginx:alpine
+    volumes:
+      - ./website:/usr/share/nginx/html     # Mount website directory for serving static content
+      - ./website/nginx/nginx.conf:/etc/nginx/conf.d/default.conf  # Mount custom NGINX configuration
+    ports:
+      - "2712:80"                           # Expose NGINX container port 80 on host port 2712
+    restart: always
+    depends_on:
+      - api
+
+  # Node.js API Backend Service  
+  api:
+    container_name: "toasted_den_api"
+    image: node:alpine                      # Use Node.js Alpine image
+    working_dir: /app
+    volumes:
+      - ./website/server:/app               # Mount server directory
+      - ./website/data:/data                # Mount data directory
+      - ./website/public:/app/public        # Mount public directory for static file serving
+    ports:
+      - "3000:3000"                         # Expose API container port 3000 on host port 3000
+    command: >
+      sh -c "npm install &&
+            node server.js"                 # Install dependencies and run the server
+    restart: always

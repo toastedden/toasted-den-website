@@ -1,0 +1,23 @@
+{
+  "name": "toasted-api-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toastedden/toasted-den-website.git"
+  },
+  "author": "Toasted Den",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toastedden/toasted-den-website/issues"
+  },
+  "homepage": "https://github.com/toastedden/toasted-den-website#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}

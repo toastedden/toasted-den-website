@@ -1,0 +1,104 @@
+/* styles.css */
+
+/* Define color variables */
+:root {
+    --bg-color: #09090a;
+    /*--bg-color: #0c0b0b;*/
+    --text-color: #e6e6e6;
+    --link-color: #f9d290;
+    --footer-link-color: #917b55;
+}
+
+/* Basic reset and body styles */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+h1 a {
+    color: var(--link-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Main heading and smaller text styles */
+h1, .smaller-text {
+    font-size: 42px;
+    color: var(--text-color);
+    text-align: center;
+    margin: 0;
+}
+
+/* Container layout */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 20px;
+}
+
+/* Logo styling */
+.logo {
+    width: 160px;
+    height: auto;
+    margin-bottom: 10px;
+    animation: spinAnimation 1.5s cubic-bezier(0.5, 0.1, 0.5, 1) infinite;
+}
+
+/* Smaller text specifics */
+.smaller-text {
+    font-size: 24px;
+    color: #CCCCCC;
+}
+
+/* Link styling within smaller text */
+.smaller-text a {
+    color: var(--link-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/* Gap text spacing */
+#gap-text {
+    margin-bottom: 10px;
+}
+
+/* Spinning logo animation */
+@keyframes spinAnimation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Footer styles */
+.footer {
+    font-size: 15px;
+    background-color: var(--bg-color);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Footer link styles */
+.footer a {
+    color: var(--footer-link-color);
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
