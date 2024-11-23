@@ -26,7 +26,7 @@ app.get('/api/count-visit', (req, res) => {
             if (err) {
                 return res.status(500).json({ error: 'Failed to update visit data.' });
             }
-            res.json({ visit_count: visitData.visit_count });
+            res.json({ visit_count: visitData.visit_count.toLocaleString() });
         });
     });
 });
